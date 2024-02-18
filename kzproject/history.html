@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жырының зерттелу тарихы</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        button {
+            background-color: white;
+            position: center;
+            width: 77px;
+            height: 77px;
+        }
+        img {
+            width: 55px;
+            height: 55px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content {
+            text-align: center;
+        }
+
+        .modal-close {
+            cursor: pointer;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        #messageModal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h2>«Қозы көрпеш -Баян сұлу» жырының зерттелу  тарихы</h2><br><br>
+    <div class="infobutton">
+        <button onclick="showMessage('XIII-XIV ғасырлардан бастап жырланып, XIX ғасырдың ортасында қағазға түскен қазақ халқының лиро-эпостық жыры.')"> <!-- Replace with your image -->
+            <img src="images\book1.webp" alt="Button 1">
+        </button><br><br>
+        <button onclick="showMessage('Жыр Сыбанбай, Бекбау, Жанақ, Шөже ақындардың орындауында ауызша таралған')"> <!-- Replace with your image -->
+            <img src="images\book2.webp" alt="Button 2">
+        </button><br><br>
+        <button onclick="showMessage('Алғаш рет оны хатқа Г.Саблуков 1830 жылы түсірді')"> <!-- Replace with your image -->
+            <img src="images\pen.webp" alt="Button 3">
+        </button><br><br>
+        <button onclick="showMessage('Жырдың 20-ға жуық нұсқасы бар.')">
+            <img src="images/notes.webp" alt="Button 4">
+        </button><br><br>
+        <button onclick="showMessage('Ең таралған нұсқасы - Жанақ нұсқасы')"> <!-- Replace with your image -->
+            <img src="images/notes2.webp" alt="Button 5">
+        </button>
+    </div><br><br><br><br>
+
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <p id="message"></p>
+            <span class="modal-close" onclick="closeMessageModal()">Жабу</span>
+        </div>
+    </div>
+    <button class="arrowbutton" onclick="document.location='traditions.html'">Келесі →</button>
+    <script>
+        function showMessage(message) {
+            document.getElementById('message').innerText = message;
+            document.getElementById('messageModal').style.display = 'block';
+        }
+
+        function closeMessageModal() {
+            document.getElementById('messageModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
