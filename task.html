@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check the age</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="container">
+    <h1>Enter real age</h1>
+    <p>Enter age:</p>
+    <input type="number" id="age" min="0" placeholder="Existing only!">
+    <button onclick="checkAge()">Click</button>
+    <div class="result" id="result"></div>
+</div>
+ 
+<script>
+    function checkAge() {
+        const age = document.getElementById('age').value;
+        const result = document.getElementById('result');
+        
+        if (age === '') {
+            result.innerHTML = 'О, это же возраст             !';
+result.style.color = 'red';
+        } else if (age < 18) {
+            result.innerHTML = '';
+result.style.color = 'red';
+        } else if (age >= 18 && age <= 99){
+            result.innerHTML = 'Age is acceptable';
+result.style.color = 'green';
+        } else {
+		result.innerHTML = 'Invalid';
+result.style.color = 'red';
+	}
+    }
+</script>
+ 
+</body>
+</html>
